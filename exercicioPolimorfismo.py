@@ -41,9 +41,9 @@ def cadastrar(tipoProduto):
             preco = int(input())
             novoProduto = Produto(nome, preco)
             existeId = verificarIdExistente(novoProduto.id)
-            if(existeId == False and  novoProduto.nome != '' and (novoProduto.preco != 0 or novoProduto.preco is not null)):
+            if(existeId == False and  novoProduto.nome != '' and (novoProduto.preco != 0 or novoProduto.preco is not None)):
                 list.append(novoProduto)
-            elif(existeId == True or (novoProduto.nome == '' or ( novoProduto.preco == 0 or novoProduto is null))):
+            elif(existeId == True or (novoProduto.nome == '' or ( novoProduto.preco == 0 or novoProduto is None))):
                 raise Exception("Desculpe, não foi possível adicionar o produto")
          
 
@@ -63,7 +63,7 @@ def cadastrar(tipoProduto):
             produtor = input()
             novoCd = Cd(cantor, produtor, nome, preco)
             existeId = verificarIdExistente(novoCd.id)
-            if(existeId == False and  novoCd.nome != '' and (novoCd.preco != 0 or novoCd.preco is not null)):
+            if(existeId == False and  novoCd.nome != '' and (novoCd.preco != 0 or novoCd.preco is not None)):
                 list.append(novoCd)
             elif(existeId == True or (novoCd.nome == '' or novoCd.preco == 0 or novoCd.cantor =='' or novoCd.produtor =='')):
                 raise Exception ("Desculpe, não foi possível adicionar o produto")
@@ -84,7 +84,7 @@ def cadastrar(tipoProduto):
             duracao = int(input())
             novoDvd = Dvd(diretor, duracao, nome, preco)
             existeId = verificarIdExistente(novoDvd.id)
-            if(existeId == False and  novoDvd.nome != '' and (novoDvd.preco != 0 or novoDvd.preco is not null)):
+            if(existeId == False and  novoDvd.nome != '' and (novoDvd.preco != 0 or novoDvd.preco is not None)):
                 list.append(novoDvd)
             elif(existeId == True or (novoDvd.nome == '' or novoDvd.preco == 0 or novoDvd.diretor =='' or novoDvd.duracao !=0)):
                 raise Exception ("Desculpe, não foi possível adicionar o produto")
@@ -103,9 +103,9 @@ def cadastrar(tipoProduto):
             os.system("cls")
             print("digite a Editora para o novo Livro : ")
             editora = input()
-            novoLivro = Dvd(autor, editora, nome, preco)
+            novoLivro = Livro(autor, editora, nome, preco)
             existeId = verificarIdExistente(novoLivro.id)
-            if(existeId == False and  novoLivro.nome != '' and (novoLivro.preco != 0 or novoLivro.preco is not null)):
+            if(existeId == False and  novoLivro.nome != '' and (novoLivro.preco != 0 or novoLivro.preco is not None)):
                 list.append(novoLivro)
             elif(existeId == True or (novoLivro.nome == '' or novoLivro.preco == '' or novoLivro.autor =='' or novoLivro.editora == '')):
                 raise Exception ("Desculpe, não foi possível adicionar o produto")
