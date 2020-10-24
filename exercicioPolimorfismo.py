@@ -10,6 +10,7 @@ produto = Produto("cafe", 30)
 cd = Cd("Gilberto Gil", "Arnaldo",  "Gil - acústico", 50)
 dvd = Dvd("Titanic", 120 ,"Filme - Titanic",90)
 livro = Livro("robert", "companhia das letras","livro - '1989", 110)
+livro = Livro("Ricardo", "Fabrica de Memes","Livro de Teste", 110)
 list = [produto, dvd, cd, livro]
 
 def menuInicial():
@@ -116,6 +117,13 @@ def cadastrar(tipoProduto):
     finally:
         input()
 
+def deletar(nomeProduto,tipoProduto):
+    for item in list:
+        classeOriginal = str(type(item)) #Resgatando a classe original e transformando em String
+        classeComparativa = "<class '" + tipoProduto +"." +tipoProduto+"'>" #Traduzindo a classe desejada pro formato
+        if(classeOriginal == classeComparativa and item.nome == nomeProduto):
+            list.remove(item)
+            print("Item deletado com sucesso")
 
 try:
     escolha = menuInicial()
@@ -132,7 +140,10 @@ try:
             cadastrar(tipoProduto)
             escolha = menuInicial()
         if(escolha == 3):
-            pass #Implementar
+            tipoProduto = input("Qual o tipo do produto deseja deletar:   ")
+            nomeProduto = input("Qual o nome exato do produto:   ")
+            deletar(nomeProduto,tipoProduto)
+            escolha = menuInicial()
         if(escolha == 4):
             pass #Implementar
         if(escolha == 5):
