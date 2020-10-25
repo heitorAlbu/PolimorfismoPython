@@ -25,4 +25,4 @@ class Livro(Produto):
         self._editora = editora
 
     def Descricao(self):
-        return "O produto é : "  + str(self.nome) + " e custa R$ " + str(self.preco) + " preço a vista : " + self.getPrecoAvista()  + " autor : " + self.autor + " editora : " + self.editora
+        return "[Nome: ] "  + str(self.nome) + " [Preco: ] " + str(self.preco) + " [Preco a vista: ] " + self.getPrecoAvista()  + " [Autor: ] " + self.autor + " [Editora: ] " + self.editora

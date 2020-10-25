@@ -24,4 +24,4 @@ class Cd(Produto):
         self._produtor = produtor
 
     def Descricao(self):
-        return "O produto é : "  + str(self.nome) + " e custa R$ " + str(self.preco) + " -  preço a vista : " + self.getPrecoAvista() +" cantor : " + self.cantor + " produtor : " + self.produtor
+        return "[Nome: ] "  + str(self.nome) + " [Preco: ] " + str(self.preco) + " [Preco a vista: ] " + self.getPrecoAvista() +" [Cantor: ] " + self.cantor + " [Produtor :] " + self.produtor

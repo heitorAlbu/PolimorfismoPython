@@ -23,4 +23,4 @@ class  Dvd(Produto):
         self._duracao = duracao
 
     def Descricao(self):
-        return "O produto é : "  + str(self.nome) + " e custa R$ " + str(self.preco) + " preço a vista : " + self.getPrecoAvista() + " diretor - " + str(self.diretor)  + " duracao : " +str(self.duracao) 
+        return "[Nome: ] "  + str(self.nome) + " [Preco: ] " + str(self.preco) + " [Preco a vista: ] " + self.getPrecoAvista() + " [Diretor: ] " + str(self.diretor)  + " [Duracao: ] " +str(self.duracao) 

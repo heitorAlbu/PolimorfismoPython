@@ -8,9 +8,8 @@ import os
 #MAIN --------
 produto = Produto("cafe", 30)
 cd = Cd("Gilberto Gil", "Arnaldo",  "Gil - acústico", 50)
-dvd = Dvd("Titanic", 120 ,"Filme - Titanic",90)
-livro = Livro("robert", "companhia das letras","livro - '1989", 110)
-livro = Livro("Ricardo", "Fabrica de Memes","Livro de Teste", 110)
+dvd = Dvd("James Cameron", 120 ,"Titanic",90)
+livro = Livro("JK Howling,","Editora Rocco","Harry Potter",230)
 list = [produto, dvd, cd, livro]
 
 def menuInicial():
@@ -125,6 +124,68 @@ def deletar(nomeProduto,tipoProduto):
             list.remove(item)
             print("Item deletado com sucesso")
 
+
+def atualizar(nomeProduto,tipoProduto):
+    for item in list:
+        classeOriginal = str(type(item)) #Resgatando a classe original e transformando em String
+        classeComparativa = "<class '" + tipoProduto +"." +tipoProduto+"'>" #Traduzindo a classe desejada pro formato
+        if(classeOriginal == classeComparativa and item.nome == nomeProduto):
+            print("Seu objeto possui os seguintes atributos:")
+            print(item.Descricao())
+            atributo = str.lower(input("Qual atributo deseja alterar:  "))
+            valor = input("Digite o dado que será inserido: ")
+            if(classeOriginal == "<class 'Dvd.Dvd'>"):
+                if(atributo == "nome"):
+                    item.nome = valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "preco"):
+                    item.preco == int(valor)
+                    print("Alterado com Sucesso")
+                elif(atributo == "duracao"):
+                    item.duracao = valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "diretor"):
+                    item.diretor = valor
+                    print("Alterado com Sucesso")
+
+            elif(classeOriginal == "<class 'Cd.cd'>"):
+                if(atributo == "nome"):
+                    item.nome = valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "preco"):
+                    item.preco == int(valor)
+                    print("Alterado com Sucesso")
+                elif(atributo == "cantor"):
+                    item.cantor == valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "produtor"):
+                    item.produtor = valor
+                    print("Alterado com Sucesso")
+
+            elif(classeOriginal == "<class 'Livro.Livro'>"):
+                if(atributo == "nome"):
+                    item.nome = valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "preco"):
+                    item.preco == int(valor)
+                    print("Alterado com Sucesso")
+                elif(atributo == "autor"):
+                    item.autor == valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "editora"):
+                    item.editora = valor
+                    print("Alterado com Sucesso")
+
+            elif(classeOriginal == "<class 'Produto.Produto'>"):
+                if(atributo == "nome"):
+                    item.nome = valor
+                    print("Alterado com Sucesso")
+                elif(atributo == "preco"):
+                    item.preco == int(valor)
+
+
+                
+        
 try:
     escolha = menuInicial()
 
@@ -145,7 +206,10 @@ try:
             deletar(nomeProduto,tipoProduto)
             escolha = menuInicial()
         if(escolha == 4):
-            pass #Implementar
+            tipoProduto = input("Qual o tipo do produto deseja deletar:   ")
+            nomeProduto = input("Qual o nome exato do produto:   ")
+            atualizar(nomeProduto,tipoProduto)
+            escolha = menuInicial()
         if(escolha == 5):
             break
 
